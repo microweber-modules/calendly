@@ -29,6 +29,20 @@ showMainEditTab: 'mainSettings'
                 <livewire:microweber-option::text optionKey="link" :optionGroup="$moduleId" :module="$moduleType"  />
             </div>
 
+           <div class="p-2">
+               <div class="mt-2">
+                   <livewire:microweber-option::color-picker label="Background Color" optionKey="background_color" :optionGroup="$moduleId" :module="$moduleType"  />
+               </div>
+
+               <div class="mt-2">
+                   <livewire:microweber-option::color-picker label="Text Color" optionKey="text_color" :optionGroup="$moduleId" :module="$moduleType"  />
+               </div>
+
+               <div class="mt-2">
+                   <livewire:microweber-option::color-picker label="Button & Link Color" optionKey="button_link_color" :optionGroup="$moduleId" :module="$moduleType"  />
+               </div>
+           </div>
+
         </div>
 
     @if($moduleTemplates && count($moduleTemplates) >  1)
