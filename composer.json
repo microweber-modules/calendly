@@ -1,0 +1,17 @@
+{
+  "name": "microweber-modules/calendly",
+  "description": "Calendly",
+  "license": "MIT",
+  "homepage": "https://microweber.org/modules/microweber-modules/calendly",
+  "authors": [
+    {
+      "name": "Bozhidar Slaveykov",
+      "email": "bobi@microweber.com"
+    }
+  ],
+  "keywords": [
+    "calendly"
+  ],
+  "type": "microweber-module",
+  "target-dir": "calendly"
+}
