@@ -1,5 +1,6 @@
 <?php
 
+$style = get_option('style', $params['id']);
 $link = get_option('link', $params['id']);
 
 $text = get_option('text', $params['id']);
