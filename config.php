@@ -6,7 +6,7 @@ $config['no_cache'] = false;
 $config['ui'] = true;
 $config['categories'] = "miscellaneous";
 $config['position'] = 39;
-$config['version'] = 1.1;
+$config['version'] = 1.0;
 
 $config['settings'] = [];
 $config['settings']['autoload_namespace'] = [
