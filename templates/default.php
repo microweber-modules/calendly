@@ -11,8 +11,7 @@
 
 */
 ?>
-<div class="relative">
-
+<div>
 
     <?php
     if ($style == 'popup_text'):
