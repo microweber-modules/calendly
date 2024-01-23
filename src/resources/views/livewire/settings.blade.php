@@ -66,11 +66,15 @@ showMainEditTab: 'mainSettings'
 
            <div x-show="style == 'popup_text'">
                <div>
-                   <label class="live-edit-label"><?php _e("Link Text"); ?></label>
+                   <label class="live-edit-label"><?php _e("Button & Link Text"); ?></label>
                    <livewire:microweber-option::text optionKey="link_text" :optionGroup="$moduleId" :module="$moduleType"  />
                </div>
 
                <div class="p-2">
+                   <div class="mt-2">
+                       <livewire:microweber-module-btn::template-settings-bootstrap :moduleId="$moduleId" :moduleType="$moduleType" />
+                   </div>
+                   
                    <div class="mt-2">
                        <livewire:microweber-option::color-picker label="Background Color" optionKey="background_color" :optionGroup="$moduleId" :module="$moduleType"  />
                    </div>
@@ -82,6 +86,7 @@ showMainEditTab: 'mainSettings'
                    <div class="mt-2">
                        <livewire:microweber-option::color-picker label="Button & Link Color" optionKey="primary_color" :optionGroup="$moduleId" :module="$moduleType"  />
                    </div>
+
                </div>
            </div>
 
