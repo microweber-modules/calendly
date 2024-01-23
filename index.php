@@ -3,9 +3,25 @@
 $style = get_option('style', $params['id']);
 $link = get_option('link', $params['id']);
 
-$link_text = get_option('link_text', $params['id']);
-if (empty($link_text)) {
-    $link_text = 'Schedule time with me';
+$icon = get_option('icon', $params['id']);
+$icon = html_entity_decode($icon);
+
+$button_text = get_option('button_text', $params['id']);
+if (empty($button_text)) {
+    $button_text = 'Schedule time with me';
+}
+
+if ($icon) {
+    $button_text = $icon . ($button_text !== '' ? '&nbsp;' : '') . $button_text;
+}
+
+$button_style = get_option('button_style', $params['id']);
+if (empty($button_style)) {
+    $button_style = '';
+}
+$button_size = get_option('button_size', $params['id']);
+if (empty($button_size)) {
+    $button_size = '';
 }
 
 $text_color = get_option('text_color', $params['id']);
