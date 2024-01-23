@@ -12,7 +12,7 @@
 */
 
 ?>
-<div>
+<div class="relative">
 
     <script>
         mw.require('https://assets.calendly.com/assets/external/widget.css', true);

@@ -39,7 +39,7 @@ showMainEditTab: 'mainSettings'
                </div>
 
                <div class="mt-2">
-                   <livewire:microweber-option::color-picker label="Button & Link Color" optionKey="button_link_color" :optionGroup="$moduleId" :module="$moduleType"  />
+                   <livewire:microweber-option::color-picker label="Button & Link Color" optionKey="primary_color" :optionGroup="$moduleId" :module="$moduleType"  />
                </div>
            </div>
 

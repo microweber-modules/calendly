@@ -8,15 +8,30 @@ if (empty($text)) {
 }
 
 $text_color = get_option('text_color', $params['id']);
+if (empty($text_color)) {
+    $text_color = '#ffffff';
+}
+
 $background_color = get_option('background_color', $params['id']);
-$button_link_color = get_option('button_link_color', $params['id']);
+if (empty($background_color)) {
+    $background_color = '#00a2ff';
+}
+
+$primary_color = get_option('primary_color', $params['id']);
+if (empty($primary_color)) {
+    $primary_color = '#00a2ff';
+}
+
+$primary_color = str_replace('#', '', $primary_color);
+$text_color = str_replace('#', '', $text_color);
+$background_color = str_replace('#', '', $background_color);
 
 if (empty($link)) {
     print lnotif(_e("First you must set your Calendly link from the module settings!", true));
     return;
 }
 
-$module_template = get_module_option('data-template', $params['id']);
+$module_template = get_option('data-template', $params['id']);
 
 if ($module_template == false and isset($params['template'])) {
     $module_template = $params['template'];
