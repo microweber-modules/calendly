@@ -3,9 +3,9 @@
 $style = get_option('style', $params['id']);
 $link = get_option('link', $params['id']);
 
-$text = get_option('text', $params['id']);
-if (empty($text)) {
-    $text = 'Schedule time with me';
+$link_text = get_option('link_text', $params['id']);
+if (empty($link_text)) {
+    $link_text = 'Schedule time with me';
 }
 
 $text_color = get_option('text_color', $params['id']);

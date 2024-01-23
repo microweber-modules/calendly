@@ -24,16 +24,21 @@ showMainEditTab: 'mainSettings'
 
         <div x-show="showMainEditTab=='mainSettings'">
 
+            @php
+                $style = 'default';
+                $getStyle = get_option('style', $moduleId);
+                if ($getStyle == 'popup_text') {
+                    $style = 'popup_text';
+                }
+            @endphp
+
+
+            <div x-data="{'style': '{{$style}}'}">
+
             <div>
                 <label class="live-edit-label"><?php _e("Calendly Link"); ?></label>
                 <livewire:microweber-option::text optionKey="link" :optionGroup="$moduleId" :module="$moduleType"  />
             </div>
-
-            <div>
-                <label class="live-edit-label"><?php _e("Link Text"); ?></label>
-                <livewire:microweber-option::text optionKey="link_text" :optionGroup="$moduleId" :module="$moduleType"  />
-            </div>
-
 
             <div class="col-md-6">
                 <label class="live-edit-label"><?php _e("Calendly Style"); ?></label>
@@ -46,20 +51,41 @@ showMainEditTab: 'mainSettings'
                 <livewire:microweber-option::dropdown :dropdownOptions="$radioOptions" optionKey="style" :optionGroup="$moduleId" :module="$moduleType"  />
             </div>
 
-           <div class="p-2">
-               <div class="mt-2">
-                   <livewire:microweber-option::color-picker label="Background Color" optionKey="background_color" :optionGroup="$moduleId" :module="$moduleType"  />
+            <div @mw-option-saved.window="function() {
+                    if ($event.detail.optionKey == 'style') {
+                        style = $event.detail.optionValue;
+                    }
+
+                    if ($event.detail.optionGroup === '{{$moduleId}}') {
+                            mw.reload_module_everywhere('{{$moduleType}}', function () {
+                            mw.top().app.liveEdit.handles.get('module').position(mw.top().app.liveEdit.handles.get('module').getTarget());
+                    });
+                }
+             }">
+            </div>
+
+           <div x-show="style == 'popup_text'">
+               <div>
+                   <label class="live-edit-label"><?php _e("Link Text"); ?></label>
+                   <livewire:microweber-option::text optionKey="link_text" :optionGroup="$moduleId" :module="$moduleType"  />
                </div>
 
-               <div class="mt-2">
-                   <livewire:microweber-option::color-picker label="Text Color" optionKey="text_color" :optionGroup="$moduleId" :module="$moduleType"  />
-               </div>
+               <div class="p-2">
+                   <div class="mt-2">
+                       <livewire:microweber-option::color-picker label="Background Color" optionKey="background_color" :optionGroup="$moduleId" :module="$moduleType"  />
+                   </div>
 
-               <div class="mt-2">
-                   <livewire:microweber-option::color-picker label="Button & Link Color" optionKey="primary_color" :optionGroup="$moduleId" :module="$moduleType"  />
+                   <div class="mt-2">
+                       <livewire:microweber-option::color-picker label="Text Color" optionKey="text_color" :optionGroup="$moduleId" :module="$moduleType"  />
+                   </div>
+
+                   <div class="mt-2">
+                       <livewire:microweber-option::color-picker label="Button & Link Color" optionKey="primary_color" :optionGroup="$moduleId" :module="$moduleType"  />
+                   </div>
                </div>
            </div>
 
+        </div>
         </div>
 
     @if($moduleTemplates && count($moduleTemplates) >  1)
