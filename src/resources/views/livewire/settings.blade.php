@@ -29,6 +29,11 @@ showMainEditTab: 'mainSettings'
                 <livewire:microweber-option::text optionKey="link" :optionGroup="$moduleId" :module="$moduleType"  />
             </div>
 
+            <div>
+                <label class="live-edit-label"><?php _e("Link Text"); ?></label>
+                <livewire:microweber-option::text optionKey="link_text" :optionGroup="$moduleId" :module="$moduleType"  />
+            </div>
+
            <div class="p-2">
                <div class="mt-2">
                    <livewire:microweber-option::color-picker label="Background Color" optionKey="background_color" :optionGroup="$moduleId" :module="$moduleType"  />

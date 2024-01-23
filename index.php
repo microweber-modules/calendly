@@ -4,7 +4,7 @@ $link = get_option('link', $params['id']);
 
 $text = get_option('text', $params['id']);
 if (empty($text)) {
-    $text = 'Schedule a meeting';
+    $text = 'Schedule time with me';
 }
 
 $text_color = get_option('text_color', $params['id']);
@@ -31,7 +31,7 @@ if (empty($link)) {
     return;
 }
 
-$module_template = get_option('data-template', $params['id']);
+$module_template = get_module_option('template', $params['id']);
 
 if ($module_template == false and isset($params['template'])) {
     $module_template = $params['template'];

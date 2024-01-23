@@ -20,9 +20,9 @@
     </script>
 
     <!-- Calendly link widget begin -->
-    <a href="" onclick="Calendly.initPopupWidget({url: '<?php echo $link; ?>?hide_event_type_details=1&hide_gdpr_banner=1&background_color=ed1212&text_color=1668d8&primary_color=50e711'});return false;">
+    <button type="button" class="btn btn-outline-primary" onclick="Calendly.initPopupWidget({url: '<?php echo $link; ?>?hide_event_type_details=1&hide_gdpr_banner=1&background_color=<?php echo $background_color;?>&text_color=<?php echo $text_color;?>&primary_color=<?php echo $primary_color;?>'});return false;">
         <?php echo $text; ?>
-    </a>
+    </button>
     <!-- Calendly link widget end -->
 
 </div>
