@@ -4,6 +4,7 @@ $config['name'] = "Calendly";
 $config['author'] = "Microweber";
 $config['no_cache'] = false;
 $config['ui'] = true;
+$config['ui_admin'] = true;
 $config['categories'] = "miscellaneous";
 $config['position'] = 39;
 $config['version'] = 1.0;
