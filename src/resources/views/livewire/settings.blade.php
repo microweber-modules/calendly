@@ -55,10 +55,10 @@ showMainEditTab: 'mainSettings'
                  <div style="background:#f8f8f8;border-radius:4px;padding:10px">
                      <div>
                         <div>
-                            <b><?php _e("Form Style"); ?></b>
+                            <label class="live-edit-label" style="font-size:12px"><?php _e("Form Style"); ?></label>
                         </div>
                          <div>
-                             <a href="https://microweber.org/go/calendly" style="font-size:12px;"><?php _e("Only for premium users of Calendly"); ?></a>
+                             <a href="https://microweber.org/go/calendly" target="_blank" style="font-size:12px;"><?php _e("Only for premium users of Calendly"); ?></a>
                          </div>
                      </div>
                      <div class="mt-2">

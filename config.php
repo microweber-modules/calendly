@@ -7,7 +7,7 @@ $config['ui'] = true;
 $config['ui_admin'] = true;
 $config['categories'] = "miscellaneous";
 $config['position'] = 39;
-$config['version'] = 1.2;
+$config['version'] = 1.3;
 
 $config['settings'] = [];
 $config['settings']['autoload_namespace'] = [
