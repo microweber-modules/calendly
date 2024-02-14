@@ -52,15 +52,25 @@ showMainEditTab: 'mainSettings'
             </div>
 
              <div class="p-2">
-                 <div class="mt-2">
-                     <livewire:microweber-option::color-picker label="Background Color" optionKey="background_color" :optionGroup="$moduleId" :module="$moduleType"  />
-                 </div>
+                 <div style="background:#f8f8f8;border-radius:4px;padding:10px">
+                     <div>
+                        <div>
+                            <b><?php _e("Form Style"); ?></b>
+                        </div>
+                         <div>
+                             <a href="https://microweber.org/go/calendly" style="font-size:12px;"><?php _e("Only for premium users of Calendly"); ?></a>
+                         </div>
+                     </div>
+                     <div class="mt-2">
+                         <livewire:microweber-option::color-picker label="Background Color" optionKey="background_color" :optionGroup="$moduleId" :module="$moduleType"  />
+                     </div>
 
-                 <div class="mt-2">
-                     <livewire:microweber-option::color-picker label="Text Color" optionKey="text_color" :optionGroup="$moduleId" :module="$moduleType"  />
-                 </div>
-                 <div class="mt-2">
-                     <livewire:microweber-option::color-picker label="Primary Color" optionKey="primary_color" :optionGroup="$moduleId" :module="$moduleType"  />
+                     <div class="mt-2">
+                         <livewire:microweber-option::color-picker label="Text Color" optionKey="text_color" :optionGroup="$moduleId" :module="$moduleType"  />
+                     </div>
+                     <div class="mt-2">
+                         <livewire:microweber-option::color-picker label="Primary Color" optionKey="primary_color" :optionGroup="$moduleId" :module="$moduleType"  />
+                     </div>
                  </div>
              </div>
 
